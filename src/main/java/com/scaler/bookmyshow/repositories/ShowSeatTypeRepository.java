@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface ShowSeatTypeRepository extends JpaRepository<ShowSeatType, Long> {
     List<ShowSeatType> findAllByShow(Show show);
+    //select * from show_seattype where show_id = <123>
 }

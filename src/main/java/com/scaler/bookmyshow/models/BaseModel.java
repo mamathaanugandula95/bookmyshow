@@ -15,10 +15,12 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) // 1st row will have id as 1, 2nd row will have id as 2 and so on
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 1st row will have id as 1, 2nd row will have id as 2 and so on
     private Long id;
+
     @CreatedDate
     private Date createdAt;
+
     @LastModifiedDate
     private Date updatedAt;
 }

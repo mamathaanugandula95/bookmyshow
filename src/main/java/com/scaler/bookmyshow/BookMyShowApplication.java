@@ -9,7 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@EnableJpaAuditing
+@EnableJpaAuditing// This annotation is mostly used in configuration or SpringBootApplication class like this
+// The main purpose of this annotation in this code is to actively modify the dates.
 @SpringBootApplication
 public class BookMyShowApplication implements CommandLineRunner {
     @Autowired

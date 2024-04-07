@@ -1,5 +1,6 @@
 package com.scaler.bookmyshow.services;
 
+
 import com.scaler.bookmyshow.exceptions.InvalidShowException;
 import com.scaler.bookmyshow.exceptions.InvalidUserException;
 import com.scaler.bookmyshow.exceptions.ShowSeatNotAvailableException;
@@ -52,6 +53,7 @@ public class BookingService {
 
         //1. Get user with the userId.
         Optional<User> optionalUser = userRepository.findById(userId);
+
         if (optionalUser.isEmpty()) {
             throw new InvalidUserException("Invalid User");
         }
@@ -69,6 +71,7 @@ public class BookingService {
 
         //3. Get showSeats with showSeatIds.
         List<ShowSeat> showSeats = showSeatRepository.findAllById(showSeatIds);
+        //select * from show_seat where id IN (1, 2, 3, 4);
 
         //4. Check if seats are available or not.
         for (ShowSeat showSeat : showSeats) {

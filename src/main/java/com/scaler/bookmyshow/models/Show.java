@@ -9,13 +9,20 @@ import java.util.Date;
 
 @Getter
 @Setter
-@Entity(name = "shows")
+@Entity (name = "shows")
 public class Show extends BaseModel{
+
+    // 1 : 1
+    // m : 1
+    // m->1
     @ManyToOne
     private Movie movie;
-    private String language;
     private Date startTime;
     private Date endTime;
+
+    // 1 -> 1
+    // m <- 1
+    // m:1
     @ManyToOne
     private Screen screen;
 }
